@@ -1,0 +1,35 @@
+<div class="details-component" (click)="onDetailsHide.emit(true)">
+    <div class="details-box">
+        <h3 class="title">{{title}} <strong>{{bookingCode}}</strong></h3>
+        <hr class="divider" />
+        <div>
+            <p class="paragraph">{{passengers.title.name}}. {{passengers.firstName}} {{passengers.lastName}}</p>
+        </div>
+        <div>
+            <p>CONTACT</p>
+            <p>{{email}} {{contactDetails.address}}</p>
+        </div>
+        <div>
+            <span>From:</span>
+            <span> </span>
+            <span>e m</span>
+        </div>
+        <div>
+            <span>To:</span>
+            <span></span>
+            <span>email@dom.com</span>
+        </div>
+        <div>
+            <span>Flight</span>
+            <span>email</span>
+            <span>email@dom.com</span>
+        </div>
+        <div>
+            <button (click)="printBooking()">print</button>
+            <button (click)="onDetailsHide.emit(true)">close</button>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'eim';
+    src: url('fonts/ExcellenceInMotion.ttf') format('tttruetypef');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #003145;
+    font-family: eim, sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.divider {
+    background-color: #003145;
+    border: none;
+    height: 4px;
+    margin: 25px auto;
+    width: 20px;
+}
+
+.paragraph {
+    font-size: .95em;
+    text-align: justify;
+}
