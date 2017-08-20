@@ -1,35 +1,32 @@
-<div class="details-component" (click)="onDetailsHide.emit(true)">
-    <div class="details-box">
-        <h3 class="title">{{title}} <strong>{{bookingCode}}</strong></h3>
+<!--Closing the booking details whenever clicking outside the details box.-->
+<div class="details-component" (click)="onDetailsHide.emit()">
+    <!--stopPropagation stops function in parent element from firing on child.-->
+    <div class="details-box" (click)="$event.stopPropagation()">
+        <h3 class="title">{{title}}. <strong>{{bookingCode}}</strong></h3>
+        <div class="flight">
+            <p class="paragraph">{{flight}}: <strong>{{operatingFlight.carrier.code}} {{operatingFlight.number}}</strong></p>
+        </div>
         <hr class="divider" />
-        <div>
-            <p class="paragraph">{{passengers.title.name}}. {{passengers.firstName}} {{passengers.lastName}}</p>
+        <div class="line">
+            <p class="paragraph"><strong>{{passengersTitle}}:</strong></p>
+            <p class="paragraph">{{passengers.title.name}}. {{passengers.firstName | titlecase}} {{passengers.lastName | titlecase}}</p>
+            <p class="paragraph">{{email}}: {{contactDetails.address | lowercase}}</p>
         </div>
-        <div>
-            <p>CONTACT</p>
-            <p>{{email}} {{contactDetails.address}}</p>
-        </div>
-        <div>
-            <span>From:</span>
-            <span> </span>
-            <span>e m</span>
-        </div>
-        <div>
-            <span>To:</span>
-            <span></span>
-            <span>email@dom.com</span>
-        </div>
-        <div>
-            <span>Flight</span>
-            <span>email</span>
-            <span>email@dom.com</span>
-        </div>
-        <div>
-            <button (click)="printBooking()">print</button>
-            <button (click)="onDetailsHide.emit(true)">close</button>
+        <div class="line">
+            <p class="paragraph">{{departAirPort}}: {{departFrom.name}} - {{departFrom.city.name}}, {{departFrom.city.country.name}}</p>
+            <p class="paragraph">{{departTime}}: {{operatingFlight.scheduledDeparture | date:'medium'}}</p>
 
         </div>
-
-
+        <div class="line">
+            <p class="paragraph">{{arriveAirPort}}: {{arriveOn.name}} - {{arriveOn.city.name}}, {{arriveOn.city.country.name}}</p>
+            <p class="paragraph">{{arriveTime}}: {{operatingFlight.scheduledArrival | date:'medium'}}</p>
+        </div>
+        <div>
+            <p class="paragraph">{{airplane}}: {{operatingFlight.equipment.name}}</p>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary" (click)="onDetailsHide.emit()">{{close}}</button>
+            <button class="btn" (click)="checkIn()">{{chickin}}</button>
+        </div>
     </div>
 </div>

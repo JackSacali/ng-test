@@ -6,7 +6,7 @@
         <h2 class="title">{{title}}</h2>
         <hr class="divider" />
         <p class="paragraph">{{description}}</p>
-        <form [formGroup]="retrieveBookingForm" novalidate (ngSubmit)="check(retrieveBookingForm.value, retrieveBookingForm.valid)">
+        <form [formGroup]="retrieveBookingForm" novalidate (ngSubmit)="submitForm(retrieveBookingForm.value, retrieveBookingForm.valid)">
             <div class="form-group">
                 <label>{{code}}</label>
                 <input type="text" formControlName="code" #input (input)="input.value=$event.target.value.toUpperCase()">
@@ -27,4 +27,5 @@
         </form>
     </div>
 </div>
+<!--I included here binding the event to parent componenet.-->
 <app-booking-details [hidden]="hideBookingDetails" (onDetailsHide)="onDetailsHide($event)"></app-booking-details>

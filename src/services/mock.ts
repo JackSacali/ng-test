@@ -6,7 +6,7 @@ export const DATA = JSON.parse(JSON.stringify({
     }],
     "itinerary": {
         "type": "ONE_WAY",
-        "connections": [{
+        "connections": {
             "id": 1,
             "duration": "120",
             "origin": {
@@ -33,7 +33,7 @@ export const DATA = JSON.parse(JSON.stringify({
                     }
                 }
             },
-            "segments": [{
+            "segments": {
                 "id": 2,
                 "type": "LOCAL",
                 "informational": false,
@@ -104,8 +104,8 @@ export const DATA = JSON.parse(JSON.stringify({
                         }
                     }
                 }
-            }]
-        }]
+            }
+        }
     },
     "passengers": {
         "id": 1,
